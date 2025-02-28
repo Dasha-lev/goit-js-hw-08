@@ -147,3 +147,19 @@ const images = [
       openModal(images.length - 1);
     }
   }
+  function nextImage() {
+    if (currentIndex < images.length - 1) {
+      openModal(currentIndex + 1);
+    } else {
+      openModal(0);
+    }
+  }
+
+  function onKeyPress(event) {
+    
+    if (event.key === 'ArrowRight') nextImage();
+    if (event.key === 'ArrowLeft') prevImage();
+    if (event.key === 'Escape') instance.close();
+
+  }
+  
